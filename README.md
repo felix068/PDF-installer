@@ -34,5 +34,7 @@ To launch an installed PDF file, use the "pdf_" prefix followed by the file name
 
 ## License (Do Not Sue)
 This project is licensed under the [MIT License](LICENSE), but we take no responsibility for any confusion, frustration, or headache it may cause.
+#
 
-Feel free to contribute and suggest improvements...
+Feel free to contribute and suggest improvements... 
+### Please do not optimize the code !
