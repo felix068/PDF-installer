@@ -1,16 +1,18 @@
-# PDF-installer
+# PDF-installer (Just for Fun!)
+## 
 
 ![image](https://media.discordapp.net/attachments/984138155491995650/1108485357076500650/image.png)
 
 ## Description
-PDF-installer is a command-line program written in C# that allows you to install and uninstall PDF files for later use. It provides a simple way to manage and launch installed PDF files.
+PDF-installer is a command-line program written in C# that allows you to install and uninstall PDF files for later use.
+But here's the catch—it's intentionally written with messy and inefficient code as a joke!
 
 ## Features
 - Install a specified PDF file
 - Uninstall a previously installed PDF file
 - Launch installed PDF files using the provided command
 
-## Usage
+## Usage (If You Dare)
 
 Install a specified PDF file.
 ```pdf install <file_path>```
@@ -23,13 +25,14 @@ Display help for the command.
 
 ## Note
 
-To launch an installed PDF file, use the "pdf" prefix followed by the file name. For example, if you have installed a PDF file named "my_file.pdf", you can launch it using the command "pdf_my_file".
+To launch an installed PDF file, use the "pdf_" prefix followed by the file name. Or just cross your fingers and hope it works. Good luck!
 
-## Requirements
+## Requirements (Your Patience)
 
 - .NET Framework
+- A sense of humor
 
-## License
-This project is licensed under the [MIT License](LICENSE).
+## License (Do Not Sue)
+This project is licensed under the [MIT License](LICENSE), but we take no responsibility for any confusion, frustration, or headache it may cause.
 
-Feel free to contribute and suggest improvements!
+Feel free to contribute and suggest improvements...
