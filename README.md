@@ -25,7 +25,7 @@ Display help for the command.
 
 ## Note
 
-To launch an installed PDF file, use the "pdf_" prefix followed by the file name. Or just cross your fingers and hope it works. Good luck!
+To launch an installed PDF file, use the "pdf_" prefix followed by the file name (with no file extention). Or just cross your fingers and hope it works. Good luck!
 
 ## Requirements (Your Patience)
 
