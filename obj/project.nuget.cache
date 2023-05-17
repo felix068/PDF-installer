@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "etmA/zNPTEQ51ZJZTcewNZqCtBU421uMPTMaj5UGuyWp3QFb/Hs8AUVaUClSOUPXu0Auwad5OCYh2z5wnJnCNQ==",
+  "success": true,
+  "projectFilePath": "/root/Projects/pdf/pdf.csproj",
+  "expectedPackageFiles": [
+    "/root/.nuget/packages/microsoft.netcore.app.runtime.linux-x64/7.0.5/microsoft.netcore.app.runtime.linux-x64.7.0.5.nupkg.sha512",
+    "/root/.nuget/packages/microsoft.aspnetcore.app.runtime.linux-x64/7.0.5/microsoft.aspnetcore.app.runtime.linux-x64.7.0.5.nupkg.sha512"
+  ],
+  "logs": []
+}

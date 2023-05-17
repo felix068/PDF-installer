@@ -1,0 +1,2 @@
+/root/Projects/pdf/bin/Release/net7.0/linux-x64/publish/pdf.pdb
+/root/Projects/pdf/bin/Release/net7.0/linux-x64/publish/pdf

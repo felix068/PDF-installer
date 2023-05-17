@@ -1,0 +1,15 @@
+/root/Projects/pdf/bin/Debug/net7.0/pdf
+/root/Projects/pdf/bin/Debug/net7.0/pdf.deps.json
+/root/Projects/pdf/bin/Debug/net7.0/pdf.runtimeconfig.json
+/root/Projects/pdf/bin/Debug/net7.0/pdf.dll
+/root/Projects/pdf/bin/Debug/net7.0/pdf.pdb
+/root/Projects/pdf/obj/Debug/net7.0/pdf.csproj.AssemblyReference.cache
+/root/Projects/pdf/obj/Debug/net7.0/pdf.GeneratedMSBuildEditorConfig.editorconfig
+/root/Projects/pdf/obj/Debug/net7.0/pdf.AssemblyInfoInputs.cache
+/root/Projects/pdf/obj/Debug/net7.0/pdf.AssemblyInfo.cs
+/root/Projects/pdf/obj/Debug/net7.0/pdf.csproj.CoreCompileInputs.cache
+/root/Projects/pdf/obj/Debug/net7.0/pdf.dll
+/root/Projects/pdf/obj/Debug/net7.0/refint/pdf.dll
+/root/Projects/pdf/obj/Debug/net7.0/pdf.pdb
+/root/Projects/pdf/obj/Debug/net7.0/pdf.genruntimeconfig.cache
+/root/Projects/pdf/obj/Debug/net7.0/ref/pdf.dll
