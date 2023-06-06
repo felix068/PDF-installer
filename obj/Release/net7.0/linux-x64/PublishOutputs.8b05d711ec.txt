@@ -1,0 +1,2 @@
+/home/mopi/PDF-installer/bin/Release/net7.0/linux-x64/publish/pdf.pdb
+/home/mopi/PDF-installer/bin/Release/net7.0/linux-x64/publish/pdf

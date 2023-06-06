@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/root/Projects/pdf/pdf.csproj": {}
+    "/home/mopi/PDF-installer/pdf.csproj": {}
   },
   "projects": {
-    "/root/Projects/pdf/pdf.csproj": {
+    "/home/mopi/PDF-installer/pdf.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/root/Projects/pdf/pdf.csproj",
+        "projectUniqueName": "/home/mopi/PDF-installer/pdf.csproj",
         "projectName": "pdf",
-        "projectPath": "/root/Projects/pdf/pdf.csproj",
-        "packagesPath": "/root/.nuget/packages/",
-        "outputPath": "/root/Projects/pdf/obj/",
+        "projectPath": "/home/mopi/PDF-installer/pdf.csproj",
+        "packagesPath": "/home/mopi/.nuget/packages/",
+        "outputPath": "/home/mopi/PDF-installer/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/root/.nuget/NuGet/NuGet.Config"
+          "/home/mopi/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -50,6 +50,10 @@
           "warn": true,
           "downloadDependencies": [
             {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.5, 7.0.5]"
+            },
+            {
               "name": "Microsoft.AspNetCore.App.Runtime.linux-x64",
               "version": "[7.0.5, 7.0.5]"
             },
@@ -63,7 +67,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.302/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.203/RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
