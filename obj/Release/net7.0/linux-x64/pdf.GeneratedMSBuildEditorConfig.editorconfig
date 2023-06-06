@@ -12,4 +12,4 @@ build_property.EnableSingleFileAnalyzer = true
 build_property.EnableTrimAnalyzer = true
 build_property.IncludeAllContentForSelfExtract = 
 build_property.RootNamespace = pdf
-build_property.ProjectDir = /root/Projects/pdf/
+build_property.ProjectDir = /home/mopi/PDF-installer/

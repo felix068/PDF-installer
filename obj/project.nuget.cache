@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "etmA/zNPTEQ51ZJZTcewNZqCtBU421uMPTMaj5UGuyWp3QFb/Hs8AUVaUClSOUPXu0Auwad5OCYh2z5wnJnCNQ==",
+  "dgSpecHash": "96LNo2VLaqwd7kF5xgicc1SirOSSWU0nceAXVXm/C+MpSasoTNmFEVmIAhFKu8/xLDqZUhmj1v61583L0YFMug==",
   "success": true,
-  "projectFilePath": "/root/Projects/pdf/pdf.csproj",
+  "projectFilePath": "/home/mopi/PDF-installer/pdf.csproj",
   "expectedPackageFiles": [
-    "/root/.nuget/packages/microsoft.netcore.app.runtime.linux-x64/7.0.5/microsoft.netcore.app.runtime.linux-x64.7.0.5.nupkg.sha512",
-    "/root/.nuget/packages/microsoft.aspnetcore.app.runtime.linux-x64/7.0.5/microsoft.aspnetcore.app.runtime.linux-x64.7.0.5.nupkg.sha512"
+    "/home/mopi/.nuget/packages/microsoft.netcore.app.runtime.linux-x64/7.0.5/microsoft.netcore.app.runtime.linux-x64.7.0.5.nupkg.sha512",
+    "/home/mopi/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.5/microsoft.aspnetcore.app.ref.7.0.5.nupkg.sha512",
+    "/home/mopi/.nuget/packages/microsoft.aspnetcore.app.runtime.linux-x64/7.0.5/microsoft.aspnetcore.app.runtime.linux-x64.7.0.5.nupkg.sha512"
   ],
   "logs": []
 }

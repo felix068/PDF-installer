@@ -35,92 +35,135 @@ Examples:
             }
             if (args.Length != 0 && args[0] == "install")
             {
-                string path = args[1];
-                string name = Path.GetFileNameWithoutExtension(path);
-                if (Path.GetExtension(path) == ".pdf")
+                if (args.Length < 2 || string.IsNullOrEmpty(args[1]))
                 {
-                    if (!Directory.Exists("/usr/bin/dir-pdf"))
-                    { Directory.CreateDirectory("/usr/bin/dir-pdf/"); }
-                    File.Copy(path, @"/usr/bin/dir-pdf/" + "pdf_" + name);
-                    using (StreamWriter sw = new StreamWriter("/usr/bin/pdf_" + name))
-                    {
-                        sw.WriteLine("xdg-open " + "/usr/bin/dir-pdf/pdf_" + name + " &");
-                    }
-                    Process p = new Process();
-                    p.StartInfo.FileName = "chmod";
-                    p.StartInfo.Arguments = "+x " + "/usr/bin/pdf_" + name;
-                    p.StartInfo.UseShellExecute = false;
-                    p.Start();
-
-                    bool shortcut = false;
-                    string key;
-                    while (!shortcut)
-                    {
-                        Console.Write("\nDo you want to put the pdf in your start menu? [Y/N] ");
-                        key = Console.ReadLine();
-
-                        if (key == "Y")
-                        {
-                            shortcut = true;
-                           using (StreamWriter sw = new StreamWriter("/usr/share/applications/pdf_" + name))
-                            {
-                                sw.WriteLine(@"[Desktop Entry]
-
-                Type=Application
-
-                Version=1.0
-
-                Name=" + name + @"
-
-                Path=/usr/bin
-
-                Exec=pdf_" + name + @"
-
-                Terminal=false");
-                            }
-                        }
-                        else if (key == "N")
-                        {
-                            break; // Quit the loop if "N" is entered
-                        }
-                    }
-
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("The pdf file has been successfully installed !");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("\nThe command is missing an argument (example: pdf install /path/to/file.pdf)");
                     Console.ResetColor();
-                    Console.ForegroundColor = ConsoleColor.Gray;
                     Console.WriteLine("");
                 }
                 else
                 {
+                    string path = args[1];
+                    string name = Path.GetFileNameWithoutExtension(path);
+                    try
+                    {
+                        if (Path.GetExtension(path) == ".pdf")
+                        {
+                            if (!Directory.Exists("/usr/bin/dir-pdf"))
+                            {
+                                Directory.CreateDirectory("/usr/bin/dir-pdf/");
+                            }
+                            File.Copy(path, @"/usr/bin/dir-pdf/" + "pdf_" + name);
+                            using (StreamWriter sw = new StreamWriter("/usr/bin/pdf_" + name))
+                            {
+                                sw.WriteLine("xdg-open " + "/usr/bin/dir-pdf/pdf_" + name + " &");
+                            }
+                            Process p = new Process();
+                            p.StartInfo.FileName = "chmod";
+                            p.StartInfo.Arguments = "+x " + "/usr/bin/pdf_" + name;
+                            p.StartInfo.UseShellExecute = false;
+                            p.Start();
+
+                            bool shortcut = false;
+                            string key;
+                            while (!shortcut)
+                            {
+                                Console.Write("\nDo you want to put the pdf in your start menu? [Y/N] ");
+                                key = Console.ReadLine();
+
+                                if (key == "Y")
+                                {
+                                    shortcut = true;
+                                    Console.WriteLine("The PDF will be in your start menu!");
+                                    using (StreamWriter sw = new StreamWriter("/usr/share/applications/pdf_" + name + ".desktop"))
+                                    {
+                                        sw.WriteLine(@"[Desktop Entry]
+                                        Type=Application
+                                        Version=1.0
+                                        Name=" + name + @"
+                                        Path=/usr/bin
+                                        Exec=pdf_" + name + @"
+                                        Terminal=false");
+                                    }
+                                }
+                                else if (key == "N")
+                                {
+                                    Console.WriteLine("The file will NOT be in your start menu");
+                                    break; // Quit the loop if "N" is entered
+                                }
+                            }
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("The pdf file has been successfully installed!");
+                        Console.ResetColor();
+                        Console.WriteLine("");
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("This is not a valid pdf file.");
+                            Console.ResetColor();
+                            Console.WriteLine("");
+                        }
+                        }
+                        catch (UnauthorizedAccessException)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine($"Access unauthorized! execute it as root!");
+                            Console.ResetColor();
+                            Console.WriteLine("");
+                        }
+
+                    }
+                    valid = true;
+                }
+                if (args.Length != 0 && args[0] == "uninstall")
+                {
+                    if (args.Length < 2 || string.IsNullOrEmpty(args[1]))
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("\nThe command is missing an argument (example: pdf uninstall mypdf)");
+                        Console.ResetColor();
+                        Console.WriteLine("");
+                    }
+                    else
+                    {
+                        string name = args[1];
+                        if (!File.Exists("/usr/bin/pdf_" + name))
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("\nThe pdf doesn't exist");
+                            Console.ResetColor();
+                            Console.WriteLine("");
+                        }
+                        else
+                        try
+                        {
+                            {
+                                File.Delete("/usr/bin/pdf_" + name);
+                                File.Delete("/usr/bin/dir-pdf/pdf_" + name);
+                                File.Delete("/usr/share/applications/" + name + ".desktop");
+                            }
+                        }
+                            catch (UnauthorizedAccessException)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine($"Access unauthorized! execute it as root!");
+                            Console.ResetColor();
+                            Console.WriteLine("");
+                        }
+                    }
+                    valid = true;
+                }
+                if (!valid)
+                {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("This is not a valid pdf file.");
+                    Console.WriteLine(@"The command is not valid.
+    Run ""pdf --help"" for more information on a command.");
                     Console.ResetColor();
                     Console.ForegroundColor = ConsoleColor.Gray;
                     Console.WriteLine("");
                 }
-                valid = true;
-            }
-            if (args.Length != 0 && args[0] == "uninstall")
-            {
-                string name = args[1];
-                File.Delete("/usr/bin/pdf_" + name);
-                File.Delete("/usr/bin/dir-pdf/pdf_" + name);
-                File.Delete("/usr/share/applications/" + name);
-                valid = true;
-            }
-            if (!valid)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine(@"The command is not valid.
-Run ""pdf --help"" for more information on a command.");
-                Console.ResetColor();
-                Console.ForegroundColor = ConsoleColor.Gray;
-                Console.WriteLine("");
-            }
-
-            // Code à exécuter après le choix Y/N
-            // ...
         }
     }
 }
