@@ -22,6 +22,19 @@ Uninstall a previously installed PDF file.
 Display help for the command.
 ```pdf --help```
 
+## Installation
+
+To install the project using either wget or curl, follow the steps below:
+
+**Copy and paste the following command if you have `curl` installed:**
+```shell
+sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/felix068/PDF-installer/main/Install.sh)"
+```
+
+**Alternatively, if you have `wget` installed, use the following command:**
+```shell
+sudo bash -c "bash <(wget -qO- https://raw.githubusercontent.com/felix068/PDF-installer/main/Install.sh)"
+```
 ## Note
 
 To launch an installed PDF file, use the "pdf_" prefix followed by the file name (with no file extention). Or just cross your fingers and hope it works. Good luck!
